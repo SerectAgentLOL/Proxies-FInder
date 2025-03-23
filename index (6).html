@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proxies FInder</title>
+
+    <!-- Google Font: Orbitron for Futuristic Feel -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Global Styles */
+        body {
+            background: black;
+            color: white;
+            font-family: 'Orbitron', sans-serif;
+            text-align: center;
+            overflow: hidden;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            position: relative;
+        }
+
+        /* Animated Star Background */
+        .star {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background: white;
+            opacity: 0.7;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            from {
+                transform: translateY(-10vh);
+                opacity: 1;
+            }
+            to {
+                transform: translateY(100vh);
+                opacity: 0;
+            }
+        }
+
+        /* Glowing Header */
+        h1 {
+            font-size: 3.5em;
+            color: cyan;
+            text-shadow: 0 0 20px cyan, 0 0 40px cyan, 0 0 60px cyan;
+            animation: glow 1.5s infinite alternate;
+        }
+
+        @keyframes glow {
+            0% { text-shadow: 0 0 20px cyan, 0 0 40px cyan; }
+            100% { text-shadow: 0 0 30px cyan, 0 0 60px cyan; }
+        }
+
+        p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            color: #f4f4f4;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+        }
+
+        /* Modern Dropdown */
+        .dropdown {
+            position: relative;
+            width: 260px;
+            margin: 20px 0;
+        }
+
+        .dropdown select {
+            width: 100%;
+            padding: 14px;
+            font-size: 18px;
+            border-radius: 8px;
+            border: 2px solid cyan;
+            background: #222;
+            color: white;
+            cursor: pointer;
+            transition: 0.3s;
+            appearance: none;
+            text-align: center;
+        }
+
+        .dropdown select:hover {
+            border-color: #00ffff;
+            background-color: #333;
+        }
+
+        /* Futuristic Button */
+        button {
+            margin-top: 20px;
+            padding: 14px 35px;
+            font-size: 20px;
+            border-radius: 8px;
+            color: white;
+            background: linear-gradient(45deg, cyan, blue);
+            border: none;
+            cursor: pointer;
+            position: relative;
+            transition: all 0.3s ease-in-out;
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
+            box-shadow: 0 0 15px cyan;
+        }
+
+        button:hover {
+            transform: scale(1.1);
+            background: linear-gradient(45deg, blue, cyan);
+            box-shadow: 0 0 25px cyan;
+        }
+
+        /* Background Music Controls */
+        #musicControls {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            cursor: pointer;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 10px;
+            border-radius: 50%;
+            border: 2px solid cyan;
+            box-shadow: 0 0 10px cyan;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2.5em;
+            }
+            p {
+                font-size: 1em;
+            }
+            .dropdown {
+                width: 90%;
+            }
+            button {
+                font-size: 16px;
+                padding: 12px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Starry Background -->
+    <script>
+        function createStars() {
+            for (let i = 0; i < 50; i++) {
+                let star = document.createElement("div");
+                star.classList.add("star");
+                star.style.left = Math.random() * 100 + "vw";
+                star.style.animationDuration = Math.random() * 5 + 2 + "s";
+                document.body.appendChild(star);
+            }
+        }
+        createStars();
+    </script>
+
+    <!-- Title -->
+    <h1>Proxies FInder 1.0</h1>
+    <p>Beyond Borders.</p>
+
+    <!-- Proxy Dropdown -->
+    <div class="dropdown">
+        <select id="proxySelect">
+            <option value="" disabled selected>Select a Proxy</option>
+            <option value="https://phoenix-a.vercel.app/">Interstellar</option>
+            <option value="https://right.ostrovsky.sk/">Ghost</option>
+            <option value="https://abcmousenostalga.global.ssl.fastly.net/">Void</option>
+            <option value="https://canvas.goguardian.ixl.dreambox.104.243.38.142.backname.io/">Doge</option>
+        <option value="https://uv-static-brunys.global.ssl.fastly.net/">Utraviolet</option>
+   <option value="https://abcmousenostalga.global.ssl.fastly.net/">Bolt</option>       
+<option value="https://learninghtml.flage.site/index.html#game-grid">Camoflauge</option>
+<option value="https://278er9ccfrfcwrcrffederqwewe.ngr.f5.si/">Astroid</option>
+<option value="https://jordansmathwork-v6-9aqvg.kinsta.page/">Jordan math</option>
+<option value="https://redis.104-243-45-193.nip.io/">DaydreamX</option>
+<option value="https://asdfghjkl.global.ssl.fastly.net/">Bordem v2</option>
+</select>
+    </div>
+
+    <!-- Open Proxy Button -->
+    <button onclick="openProxy()">Open</button>
+
+    <!-- Background Music -->
+    <audio id="bgMusic" autoplay loop>
+        <source src="https://www.bensound.com/bensound-music/bensound-epic.mp3" type="audio/mpeg">
+    </audio>
+    <div id="musicControls" onclick="toggleMusic()">🔊</div>
+
+    <script>
+        function openProxy() {
+            var select = document.getElementById("proxySelect");
+            var url = select.value;
+            if (url) {
+                window.open(url, "_blank");
+            } else {
+                alert("Please select a proxy first!");
+            }
+        }
+
+        function toggleMusic() {
+            var music = document.getElementById("bgMusic");
+            if (music.paused) {
+                music.play();
+                document.getElementById("musicControls").textContent = "🔊";
+            } else {
+                music.pause();
+                document.getElementById("musicControls").textContent = "🔇";
+            }
+        }
+    </script>
+
+</body>
+</html>
+
